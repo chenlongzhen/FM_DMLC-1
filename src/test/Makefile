@@ -5,7 +5,7 @@ include ../../dmlc-core/make/dmlc.mk
 BIN = read.dmlc
 
 # common build script for programs
-export CXX=/usr/local/Cellar/gcc/7.2.0/bin/g++-7
+#export CXX=/usr/local/Cellar/gcc/7.2.0/bin/g++-7
 export LDFLAGS= -L../../lib -pthread -lm -lrt $(DMLC_LDFLAGS)
 export CFLAGS = -Wall  -msse2  -Wno-unknown-pragmas -fPIC -I../../rabit/include  -I../../dmlc-core/include -std=c++11 -fopenmp
 
