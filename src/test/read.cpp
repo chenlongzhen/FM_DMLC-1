@@ -1,6 +1,6 @@
 //
 // Created by clz on 2018/2/20.
-//
+// https://github.com/chenlongzhen/FM_DMLC-1/blob/master/rabit/doc/guide.md
 
 #include <dmlc/io.h>
 #include <dmlc/data.h>
@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     // os << "test" <<'\n';
     char* oufile = argv[2];
     std::cout<<"output"<<std::endl;
-    dmlc::RowBlockIter<unsigned> *dtrain = dmlc::RowBlockIter<unsigned>::Create(oufile, 0 , 5, "libsvm");
+    dmlc::RowBlockIter<unsigned> *dtrain = dmlc::RowBlockIter<unsigned>::Create(oufile, 0 , 1, "libsvm"); // path , read part, split number, mode
     dtrain->BeforeFirst();
     while (dtrain->Next()) {
         const dmlc::RowBlock<unsigned> &batch = dtrain->Value();

@@ -2,7 +2,7 @@
 include ../../dmlc-core/make/config.mk
 include ../../dmlc-core/make/dmlc.mk
 
-BIN = read.dmlc
+BIN = read.dmlc test.rabit
 
 # common build script for programs
 #export CXX=/usr/local/Cellar/gcc/7.2.0/bin/g++-7
@@ -14,8 +14,8 @@ CFLAGS+= -I$(DEPS_PATH)/include
 LDFLAGS+= -L$(DEPS_PATH)/lib
 endif
 
-# read.dmlc : read.cpp ../../dmlc-core/libdmlc.a ../../rabit/lib/librabit.a
-read.dmlc : read.cpp ../../dmlc-core/libdmlc.a
+read.dmlc : read.cpp ../../dmlc-core/libdmlc.a ../../rabit/lib/librabit.a
+test.rabit : rabit_test.cpp ../../dmlc-core/libdmlc.a ../../rabit/lib/librabit.a
 
 all: $(BIN) 
 
